@@ -1,0 +1,26 @@
+.grandparent {
+    width:350px;
+    height:350px;
+    background-color:#6b74cc;
+    position:relative;
+  }
+.parent {
+    width:250px;
+    height:250px;
+    background-color: orange;
+    position:absolute;
+    top: 50px;
+    right:50px;
+  }
+   
+  .child {
+    width:100px;
+    height:100px;
+    background-color:#f70606;
+    position:absolute;
+    bottom:0px;
+    right:0px;
+  }
+  body{
+    background-color:#e09dcc;
+  }
