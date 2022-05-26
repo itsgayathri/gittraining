@@ -1,0 +1,61 @@
+a:link {
+    color: red;
+  }
+/* visited link */
+  a:visited {
+    color: green;
+  }
+/* mouse over link */
+  a:hover {
+    color: hotpink;
+  }
+ /* selected link */
+  a:active {
+    color: blue;
+  }
+   /* pseudo class and html class*/
+  h4.big:hover{
+    color:yellowgreen;
+    font-size: larger;
+  }
+  /*Example for html element hover*/
+  h3:hover{
+      background-color: rgb(173, 137, 207);
+      padding:30px;
+      display:inline-block;
+      }
+ /*Example for Tooltip hover*/
+    #tooltip{
+        display:none;
+        background-color: aquamarine;
+        padding:25px;
+    }
+    div:hover #tooltip{
+        display:inline-block;
+    }
+   /*example for -first child pseudo class*/
+   #firstchild b:first-child{
+        color:red;
+   }
+   #firstline::first-line{
+       color:rgb(92, 11, 197);
+       font-family: Georgia, 'Times New Roman', Times, serif;
+   }
+   #firstletter::first-letter {
+    color: #91c20a;
+    font-size: xx-large;
+  }
+  #before::before{
+      content:"♥";
+  }
+  #after::after {
+    content:"♥";
+  }
+  #select::selection{
+      background-color: #91c20a;
+      color:tomato;
+  }
+  ::marker{
+      color:green;
+      font-size: 30px;
+  }
