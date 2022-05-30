@@ -6,136 +6,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {
-        box-sizing: border-box;
-        }
-        body {
-        margin: 0;
-        }
-        h1{
-            background: rgb(10, 2, 0);
+        *{ 
+            box-sizing:border-box;
+            margin: 0;
+            padding: 0;
+            }
+        .header,.footer{
+            background-color: rgb(59, 52, 52);
+            color:rgb(168, 6, 82);
             padding:15px;
-            color:white;
             text-align: center;
         }
-        .column {
-        float: left;
-        padding: 10px;
+        .menu-area a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            background: rgb(187, 35, 98);
+            height: 40px;
         }
-        .column.side {
-        width: 25%;
+        .menu-area a:hover{
+            background: rgb(160, 82, 114);
+            color:white;
         }
-        .column.middle {
-        width: 50%;
+        .menu-area ul{
+            list-style: none;
+            display: flex;
         }
-        .row:after {
-        content: "";
-        display: table;
-        clear: both;
+        .menu-area li{
+            position: relative;
+            width: 100%;
+            text-align: center;
         }
-        @media screen and (max-width: 600px) {
-        .column.side, .column.middle {
-        width: 100%;
-  }
-}
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: rgb(240, 12, 118);
-}
-li {
-  float: left;
-}
-
-li a, .dropbtn {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover, .dropdown:hover .dropbtn {
-  background-color: rgb(172, 50, 97);
-}
-
-li.dropdown {
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
+        .menu-area li:hover .dropdown-1 > li{
+            display: block;
+            top: 0;
+        }
+        .dropdown-1 li{
+            display: none;
+            position: relative;
+        }
+        .dropdown-1{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .dropdown-1 li:hover .dropdown-2 li{
+            display: block;
+         }
+        .dropdown-2 li{
+            display: none;
+        }
+        .dropdown-2{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 100%;
+        }        
+        .content{
+            display:flex;
+            background-color: rgb(75, 66, 66);
+            padding: 10px;
+        }
+        .content .first,.middle,.last{
+            background-color:rgb(194, 63, 124);
+            margin: 10px;
+            padding: 15px;
+            align-items: flex-start;
+        }
+        @media screen and (max-width:600px) {
+            .content {
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        }  
     </style>
 </head>
 <body>
-    <div>
+    <div class="header">
         <h1>Header</h1>
     </div>
-    <section>
-        <ul>
-            <li><a href="#" class="dropbtn">Home</a>
-                    <div class="dropdown-content">
-                      <a href="#">Link 1</a>
-                      <a href="#">Link 2</a>
-                      <a href="#">Link 3</a>
-                    </div></li>
-            <li><a href="#" class="dropbtn">About us</a>
-                    <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                    </div></li>
-            <li><a href="#" class="dropbtn">Contact us</a>
-                    <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                    </div></li>                    
-        </ul>    
-    </section>
-        <div class="row">
-            <div class="column side">
-              <h2>Side</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-            </div>
-            
-            <div class="column middle">
-              <h2>Main Content</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-            </div>
-            
-            <div class="column side">
-              <h2>Side</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-            </div>
-        </div>
-    <div>
+    <div class="menu-area">
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a>
+                <ul class="dropdown-1">
+                    <li><a href="#">service one</a></li>
+                    <li><a href="#">service two</a></li>
+                    <li><a href="#">service three</a>
+                        <ul class="dropdown-2">
+                            <li><a href="#">service four</a></li>
+                            <li><a href="#">service five</a></li>
+                            <li><a href="#">service six</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="first"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo optio repellendus voluptate perferendis eveniet consequuntur enim at esse neque possimus, a molestias magnam iusto repellat numquam! Animi, vitae. Tenetur, deserunt?</p></div>
+        <div class="middle"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta non distinctio illo. Pariatur officia nihil accusamus, ducimus fugit similique facilis, itaque sint aliquid a quibusdam corporis perferendis molestiae sunt natus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, corporis eos! Voluptas earum ducimus officiis magnam, ad officia repellat a, rem aliquid eum nemo corporis fugit modi quos fuga natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolore id nostrum libero quisquam quis quidem. Maiores et est sit debitis. Deleniti culpa eveniet dolorem eum nisi veritatis dolore tempora? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta non distinctio illo. Pariatur officia nihil accusamus, ducimus fugit similique facilis, itaque sint aliquid a quibusdam corporis perferendis molestiae sunt natus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, corporis eos! Voluptas earum ducimus officiis magnam, ad officia repellat a, rem aliquid eum nemo corporis fugit modi quos fuga natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolore id nostrum libero quisquam quis quidem. Maiores et est sit debitis. Deleniti culpa eveniet dolorem eum nisi veritatis dolore tempora?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta non distinctio illo. Pariatur officia nihil accusamus, ducimus fugit similique facilis, itaque sint aliquid a quibusdam corporis perferendis molestiae sunt natus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, corporis eos! Voluptas earum ducimus officiis magnam, ad officia repellat a, rem aliquid eum nemo corporis fugit modi quos fuga natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolore id nostrum libero quisquam quis quidem. Maiores et est sit debitis. Deleniti culpa eveniet dolorem eum nisi veritatis dolore tempora?</p></div>
+        <div class="last"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ad accusantium tenetur, molestias libero, fuga sint culpa aliquid quis numquam quas illum, cum natus excepturi laborum doloremque omnis eveniet. Quisquam?</p></div>
+    </div>
+    <div class="footer">
         <h1>Footer</h1>
     </div>
-    
 </body>
 </html>
